@@ -7,4 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Horoscope.create( )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User.create(first_name: "Rashad", last_name: "Walcott", age: 30, email: "rashad@flatiron.com", user_name: "rahshad", horoscope_id: 1)
+User.create(first_name: "Aliciea", last_name: "Suechin", age: 30, email: "aliciea@flatiron.com", user_name: "aliciea", horoscope_id: 2)
+User.create(first_name: "Amrit", last_name: "Singh", age: 30, email: "amrit@flatiron.com", user_name: "amrit", horoscope_id: 3) 
