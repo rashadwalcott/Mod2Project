@@ -1,0 +1,15 @@
+<h1>Form For User</h1>
+
+<%= form_for @uesr do |f| %>
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+<%= f.label :age %>
+<%= f.number_field :age %>
+<%= f.label :user_name %>
+<%= f.text_field :user_name %>
+<%= f.label :horoscope_id %>
+<%= f.collection_select :horoscope_id, @horoscope, :id, :name %>
+<%= f.submit %>
+<% end %>
