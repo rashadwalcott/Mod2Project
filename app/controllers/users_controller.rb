@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        @compatibility = Compatibility.new
+        @horoscopes = Horoscope.all
     end
 
     def new
