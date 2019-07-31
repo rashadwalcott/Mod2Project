@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
+        @horoscopes = Horoscope.all 
     end
 
     def create 
