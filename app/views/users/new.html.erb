@@ -1,6 +1,16 @@
 <h1>Form For User</h1>
 
-<%= form_for @uesr do |f| %>
+<% if flash[:errors]%>
+<ul>
+  <% flash[:errors].each do |t| %>
+     <li>
+      <%= t %>
+     </li>
+   <% end %>
+<% end %>
+</ul>
+
+<%= form_for @user do |f| %>
 <%= f.label :first_name %>
 <%= f.text_field :first_name %>
 <%= f.label :last_name %>
@@ -10,6 +20,6 @@
 <%= f.label :user_name %>
 <%= f.text_field :user_name %>
 <%= f.label :horoscope_id %>
-<%= f.collection_select :horoscope_id, @horoscope, :id, :name %>
+<%= f.collection_select :horoscope_id, @horoscope, :id, :name %> ####We need an action page for horoscope#### 
 <%= f.submit %>
 <% end %>
