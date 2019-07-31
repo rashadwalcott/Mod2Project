@@ -1,17 +1,15 @@
 
-
-  <% if flash[:errors]%>
-    <ul>
-      <% flash[:errors].each do |err_message| %>
-        <li>
-          <%= err_message %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-
 <%= form_for @user do |f| %>
+
+<% if flash[:errors]%>
+  <ul>
+    <% flash[:errors].each do |err_message| %>
+      <li>
+        <%= err_message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
   <%= f.label :first_name %><br>
   <%= f.text_field :first_name %><br>
@@ -26,6 +24,7 @@
   <%= f.text_field :user_name %><br>
 
   <%= f.label :horoscope_id %><br>
-  <%= f.collection_select(:horoscope_id, @horoscopes, :id, :name) %><br>
+  <%= f.collection_select :horoscope_id, @horoscopes, :id, :name %><br>
+
   <%= f.submit %>
 <% end %>
