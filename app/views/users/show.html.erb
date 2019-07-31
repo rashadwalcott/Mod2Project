@@ -1,18 +1,20 @@
-<h1><%= @user.username %>'s' Show Page</h1>
+<h1><%= @user.user_name %>'s' Show Page</h1>
 
 <ul>
-  <li>
+
     <p>First Name: <%= @user.first_name %></p>
 
       <p>Last Name: <%= @user.last_name %></p>
 
-      <p> Age:<%= @user.age %></p>
+      <p> Age: <%= @user.age %></p>
 
-      <p> Email:<%= @user.email %></p>
+      <p> Email: <%= @user.email %></p>
 
-      <p>Username: <%= @user.username %></p>
+      <p>Username: <%= @user.user_name %></p>
 
-      <p> <%= @user.horoscope.name %></p>
+      <p>Horoscope: <%= @user.horoscope.name %></p>
 
-  </li>
+
 </ul>
+
+<h4><%= link_to "Edit Account", edit_user_path(@user) %></h4>

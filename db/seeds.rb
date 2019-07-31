@@ -8,6 +8,9 @@
 
 Horoscope.destroy_all
 User.destroy_all
+
+ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'horoscopes'") 
+
 #Horoscope creation
 Horoscope.create(name: "Aries" )
 Horoscope.create(name: "Taurus" )
