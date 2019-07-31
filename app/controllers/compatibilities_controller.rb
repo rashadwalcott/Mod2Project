@@ -6,6 +6,7 @@ before_action :find_compatibility, only: [:update,:destroy]
   end
 
   def create
+    byebug
     @compatibility = Compatibility.create(compatibility_params)
     if @compatibility.valid?
       redirect_to user_path(@compatibility.user)
