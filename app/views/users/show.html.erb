@@ -23,6 +23,8 @@
 
 <%=f.label "Your Horoscope"%>
 <%=f.collection_select(:horoscope_id, @horoscopes, :id, :name)%>
+<%= f.label "Their Horoscope"%>
+<%= f.collection_select:user_id, @horoscopes, :id, :name%>
 
 <%=f.hidden_field :user_id, value: @user.id%>
 
