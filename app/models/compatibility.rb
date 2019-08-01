@@ -1,7 +1,5 @@
 class Compatibility < ApplicationRecord
-
-  validates :first_name, :last_name, :user_name, uniqueness: true
-
+validates_uniqueness_of :horoscope_id
   belongs_to :user
   belongs_to :horoscope
 end

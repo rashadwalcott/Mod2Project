@@ -33,10 +33,9 @@ ActiveRecord::Schema.define(version: 20190730133815) do
     t.integer "age"
     t.string "email"
     t.string "user_name"
-    t.integer "horoscope_id"
+    t.string "horoscope_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["horoscope_id"], name: "index_users_on_horoscope_id"
   end
 
 end

@@ -1,31 +1,3 @@
 <h1>Form For User</h1>
 
-  <% if flash[:errors]%>
-    <ul>
-      <% flash[:errors].each do |err_message| %>
-        <li>
-          <%= err_message %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-
-<%= form_for @user do |f| %>
-
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-
-  <%= f.label :user_name %>
-  <%= f.text_field :user_name %>
-  
-  <%= f.label :horoscope_id %>
-  <%= f.collection_select:horoscope_id, @horoscopes, :id, :name %>
-  <%= f.submit %>
-<% end %>
+  <%= render "form" %>

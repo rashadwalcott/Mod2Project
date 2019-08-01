@@ -12,7 +12,6 @@
 
       <p>Username: <%= @user.user_name %></p>
 
-      <p>Horoscope: <%= @user.horoscope.name %></p>
 
 
 </ul>
@@ -23,11 +22,19 @@
 <h2>Check Your Compatibility</h2>
 
 <%= form_for @compatibility do |f| %>
+<% if flash[:errors]%>
+  <ul>
+    <p>
+        <%= "You have already compared against this horoscope" %>
+      </p>
+  </ul>
+<% end %>
 
 <%= f.label "Your Horoscope"%><br>
 <%= fields_for :user_id, @user.horoscope do |horoscope| %>
     <%=@user.horoscope.name%><br>
   <% end %>
+<br>
 <br>
 <%=f.label "Their Horoscope"%><br>
 <%=f.collection_select(:horoscope_id, @horoscopes, :id, :name)%><br>
@@ -35,5 +42,12 @@
 <%=f.hidden_field :user_id, value: @user.id%>
 
 <%= f.submit "Is It Destined? Or What?" %>
+<% end %>
+
+<h3>All Compatibilities</h3>
+<% @user.compatibilities.each do |compatibility| %>
+<li>
+<%= link_to "#{compatibility.horoscope.name} Match",compatibility_path(compatibility) %>
+</li>
 <% end %>
 </center>

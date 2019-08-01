@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer :age
       t.string :email
       t.string :user_name
-      t.belongs_to :horoscope, foreign_key: true
+      t.string :horoscope_id
 
       t.timestamps
     end
