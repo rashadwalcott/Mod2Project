@@ -3,4 +3,10 @@
 <h3>Your Horoscope: <%= @compatibility.user.horoscope.name %>
 <h3>Their Horoscope: <%= @compatibility.horoscope.name %></h3>
 
+<h2>Let's Sum It Up</h2>
+<p>
+  <%= @compatibility.is_compatible %>
+
+</p>
+
 <h4><%= link_to "Back To Profile",user_path(@compatibility.user) %></h4>

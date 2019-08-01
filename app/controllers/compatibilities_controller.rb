@@ -13,7 +13,8 @@ before_action :find_compatibility, only: [:show,:update,:destroy]
   def create
 
     @compatibility = Compatibility.create(compatibility_params)
-
+    @first_horoscope = @compatibility.user.horoscope.name
+    @second_horoscope =@compatibility.horoscope.name
     if @compatibility.valid?
       redirect_to user_path(@compatibility.user)
     else
